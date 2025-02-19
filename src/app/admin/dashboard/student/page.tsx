@@ -241,6 +241,7 @@ export default function StudentDatabase() {
                   <td className="px-6 py-4">
                     <div className="relative">
                       <button
+                        title="Open actions menu"
                         onClick={() => setActiveDropdown(activeDropdown === i ? null : i)}
                         className="p-1 hover:bg-gray-100 rounded-full"
                       >
@@ -313,6 +314,8 @@ export default function StudentDatabase() {
                       type="text"
                       value={newStudent.regNumber}
                       onChange={(e) => setNewStudent({ ...newStudent, regNumber: e.target.value })}
+                      placeholder="Enter Reg. Number"
+                      title="Enter Reg. Number"
                       className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
@@ -322,6 +325,7 @@ export default function StudentDatabase() {
                     <label className="block text-sm mb-2">Select Year Of Study</label>
                     <div className="relative">
                       <select
+                        title="Select Year of Study"
                         value={newStudent.yearOfStudy}
                         onChange={(e) => setNewStudent({ ...newStudent, yearOfStudy: e.target.value })}
                         className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
