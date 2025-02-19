@@ -1,36 +1,64 @@
 "use client";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
 export default function SettingsPage() {
-	return (
-		<div className="  flex justify-center items-center p-6">
-			<div className=" rounded-lg  w-full p-6 md:p-10 relative">
+	const [selectedImage, setSelectedImage] = useState("/images/avatar.png");
+	const fileInputRef = useRef<HTMLInputElement>(null);
 
+	const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (e.target.files && e.target.files[0]) {
+			const file = e.target.files[0];
+			const imageUrl = URL.createObjectURL(file);
+			setSelectedImage(imageUrl);
+		}
+	};
+
+	const triggerFileInput = () => {
+		fileInputRef.current?.click();
+	};
+
+	return (
+		<div className="flex justify-center items-center p-6">
+			<div className="rounded-lg w-full p-6 md:p-10 relative">
 				{/* Settings Title */}
 				<h2 className="hidden md:block text-2xl font-semibold text-gray-900 mb-6 md:mb-8">
 					Settings
 				</h2>
-
 				{/* Mobile View: Stack elements vertically */}
 				<div className="flex flex-col md:flex-row md:gap-8">
 					{/* Profile Section */}
 					<div className="flex flex-col items-center w-full md:w-1/3">
 						<div className="relative">
 							<Image
-								src="/images/avatar.png"
+								src={selectedImage}
 								alt="Profile"
 								width={100}
 								height={100}
 								className="rounded-full"
 							/>
-							<Check className="absolute bottom-2 right-2 bg-blue-500 text-white text-xs rounded-full p-1" size={20} />
+							<Check
+								className="absolute bottom-2 right-2 bg-blue-500 text-white text-xs rounded-full p-1"
+								size={20}
+							/>
 						</div>
 						<h3 className="mt-3 text-lg font-semibold">Profile photo</h3>
 						<p className="text-sm text-gray-500 text-center">
 							This image will be displayed on your profile
 						</p>
-						<button type="button" className="mt-3 px-4 py-2 text-red-500 border border-red-500 rounded-lg hover:bg-red-500 hover:text-white transition">
+						<input
+							type="file"
+							accept="image/*"
+							hidden
+							ref={fileInputRef}
+							onChange={handleImageChange}
+						/>
+						<button
+							type="button"
+							onClick={triggerFileInput}
+							className="mt-3 px-4 py-2 text-red-500 border border-red-500 rounded-lg hover:bg-red-500 hover:text-white transition"
+						>
 							Change Photo
 						</button>
 					</div>
@@ -50,8 +78,7 @@ export default function SettingsPage() {
 									</label>
 									<input
 										type="text"
-										value="David"
-										disabled
+										defaultValue="David"
 										title="First name"
 										placeholder="First name"
 										className="w-full px-4 py-2 bg-gray-100 border rounded-lg"
@@ -63,8 +90,7 @@ export default function SettingsPage() {
 									</label>
 									<input
 										type="text"
-										value="Emulo"
-										disabled
+										defaultValue="Emulo"
 										title="Last name"
 										placeholder="Last name"
 										className="w-full px-4 py-2 bg-gray-100 border rounded-lg"
@@ -76,8 +102,7 @@ export default function SettingsPage() {
 									</label>
 									<input
 										type="text"
-										value="2020/248279"
-										disabled
+										defaultValue="2020/248279"
 										title="Reg Number"
 										placeholder="Reg Number"
 										className="w-full px-4 py-2 bg-gray-100 border rounded-lg"
