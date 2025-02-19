@@ -25,10 +25,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
 	// Map URLs to dynamic titles
 	const pageTitles: { [key: string]: string } = {
-		"/student-dashboard": "Dashboard",
-		"/student-dashboard/payment": "Payments",
+		"/admin/dashboard": "Dashboard",
+		"/admin/dashboard/payment": "Payments",
+		"/admin/dashboard/student": "Student Database",
 		"/support": "Support",
-		"/student-dashboard/setting": "Settings",
+		"/admin/dashboard/setting": "Settings",
 	};
 	const pageTitle = pageTitles[pathname] || "Page";
 
