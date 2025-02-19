@@ -244,7 +244,7 @@ export default function PaymentsPage() {
 											>
 												View
 											</button>
-											<button>
+											<button title="More options">
 												<MoreVertical className="h-4 w-4 text-gray-400" />
 											</button>
 										</div>
@@ -277,7 +277,7 @@ export default function PaymentsPage() {
 							<div className="p-6">
 								<div className="flex justify-between items-center mb-8">
 									<h2 className="text-lg font-medium">ADD NEW DUE</h2>
-									<button onClick={() => setShowAddDueModal(false)}>
+									<button onClick={() => setShowAddDueModal(false)} title="Close modal">
 										<X className="h-5 w-5 text-gray-400" />
 									</button>
 								</div>
@@ -399,7 +399,7 @@ export default function PaymentsPage() {
 							<div className="p-6">
 								<div className="flex justify-between items-center mb-8">
 									<h2 className="text-lg font-medium">TRANSACTION DETAILS</h2>
-									<button onClick={() => setShowReceiptModal(false)}>
+									<button onClick={() => setShowReceiptModal(false)} title="Close receipt modal">
 										<X className="h-5 w-5 text-gray-400" />
 									</button>
 								</div>
