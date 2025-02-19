@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { Search, Bell, CreditCard, ChevronRight } from "lucide-react";
+import {  CreditCard, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 

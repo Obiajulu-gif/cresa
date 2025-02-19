@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { Search, Filter, ChevronDown } from "lucide-react";
+import { Search, Filter } from "lucide-react";
 
 export default function PaymentsPage() {
 	// Dummy payment data
