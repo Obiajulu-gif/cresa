@@ -66,7 +66,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 				<nav className="mt-6">
 					<div className="px-4 space-y-2">
 						<Link
-							href="/"
+							href="/student-dashboard"
 							className="flex items-center px-4 py-2 text-gray-300 hover:bg-blue-900 rounded-lg"
 							onClick={toggleMobileMenu}
 						>
@@ -74,7 +74,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 							Dashboard
 						</Link>
 						<Link
-							href="/payments"
+							href="/student-dashboard/payment "
 							className="flex items-center px-4 py-2 text-gray-300 hover:bg-blue-900 rounded-lg"
 							onClick={toggleMobileMenu}
 						>
@@ -90,7 +90,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 							Support
 						</Link>
 						<Link
-							href="/settings"
+							href="/student-dashboard/settings "
 							className="flex items-center px-4 py-2 text-gray-300 hover:bg-blue-900 rounded-lg"
 							onClick={toggleMobileMenu}
 						>

@@ -34,12 +34,12 @@ const navigation = [
 	},
 	{
 		name: "Dues & Payments",
-		href: "/admin/payments",
+		href: "/admin/dashboard/payment ",
 		icon: CreditCard,
 	},
 	{
 		name: "Students",
-		href: "/admin/students",
+		href: "/admin/dashboard/student ",
 		icon: Users,
 	},
 	{
@@ -49,7 +49,7 @@ const navigation = [
 	},
 	{
 		name: "Settings",
-		href: "/admin/settings",
+		href: "/admin/dashboard/settings",
 		icon: Settings,
 	},
 ];
