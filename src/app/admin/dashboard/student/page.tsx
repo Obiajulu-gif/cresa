@@ -761,14 +761,16 @@ export default function StudentDatabase() {
 										<label className="block text-sm mb-2">Level</label>
 										<div className="relative">
 											<select
-												value={filterCriteria.level}
-												onChange={(e) =>
-													setFilterCriteria({
-														...filterCriteria,
-														level: e.target.value,
-													})
-												}
-												className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+													title="Select Level"
+													aria-label="Select Level"
+													value={filterCriteria.level}
+													onChange={(e) =>
+														setFilterCriteria({
+															...filterCriteria,
+															level: e.target.value,
+														})
+													}
+													className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
 											>
 												{levels.map((level) => (
 													<option key={level} value={level}>
@@ -784,14 +786,16 @@ export default function StudentDatabase() {
 										<label className="block text-sm mb-2">Year of Study</label>
 										<div className="relative">
 											<select
-												value={filterCriteria.yearOfStudy}
-												onChange={(e) =>
-													setFilterCriteria({
-														...filterCriteria,
-														yearOfStudy: e.target.value,
-													})
-												}
-												className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+													title="Select Year Of Study"
+													aria-label="Select Year Of Study"
+													value={filterCriteria.yearOfStudy}
+													onChange={(e) =>
+														setFilterCriteria({
+															...filterCriteria,
+															yearOfStudy: e.target.value,
+														})
+													}
+													className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
 											>
 												{yearOptions.map((year) => (
 													<option key={year} value={year}>
@@ -985,6 +989,7 @@ export default function StudentDatabase() {
 											<select
 												id="yearOfStudy"
 												name="yearOfStudy"
+												title="Select Year Of Study"
 												defaultValue={selectedStudent.yearOfStudy}
 												className="w-full px-3 py-2 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
 											>
